@@ -1,0 +1,18 @@
+<mat-card class="mat-elevation-z4">
+  <mat-card-header>
+    <mat-card-title>{{PizzaName}}</mat-card-title>
+  </mat-card-header>
+  <img mat-card-image [src]="imageSrc" alt="{{PizzaName}}">
+  <mat-card-content>
+    <p>
+      {{PizzaBeschreibung}}
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button (click)="addToCart()" class="button">{{PizzaPreis}} €</button>
+    <div fxFlex></div>
+    <button mat-button (click)="addToCart()"><mat-icon>shopping_cart</mat-icon> zum Warenkorb hinzufügen</button>
+  </mat-card-actions>
+</mat-card>
+
+

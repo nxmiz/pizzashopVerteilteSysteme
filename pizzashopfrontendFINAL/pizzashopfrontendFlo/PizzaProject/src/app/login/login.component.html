@@ -1,0 +1,15 @@
+<form [formGroup]="loginForm" class="form">
+
+  <p>Bitte Passwort eingeben:</p>
+
+  <div class="example-container">
+    <mat-form-field appearance="fill">
+      <mat-label>Passwort</mat-label>
+      <input matInput formControlName="pw" required>
+    </mat-form-field>
+
+    <br />
+
+    <button mat-raised-button color="primary" (click)="pwAbsenden()" mat-dialog-close>Ok</button>
+  </div>
+</form>

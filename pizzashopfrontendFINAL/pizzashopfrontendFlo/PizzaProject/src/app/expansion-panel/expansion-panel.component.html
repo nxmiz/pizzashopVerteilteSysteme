@@ -1,0 +1,108 @@
+<!--
+<h3>change Event</h3>
+<mat-checkbox (change)="onChange($event)"> PQR </mat-checkbox>
+-->
+
+<mat-grid-list cols="2" rowHeight="100%">
+
+
+
+  <mat-grid-tile>
+    <cdk-virtual-scroll-viewport appendOnly autosize itemSize="50" class="example-viewport overflow">
+      <p class="überschrift">TODO:</p>
+      <div class="example-card" *ngFor="let todo of ordersTODO">
+        <mat-accordion class=accord>
+          <mat-expansion-panel (opened)="panelOpenState = true"
+                               (closed)="panelOpenState = false"
+                               hideToggle
+                               #thisPanel>
+            <!-- Bestelldaten auf einem Blick-->
+            <mat-expansion-panel-header class=panel-size>
+
+              <mat-panel-title>
+                ID: {{todo.id}}
+                <br>
+                Vorname: {{todo.vorname}}
+                <br>
+                Nachname: {{todo.nachname}}
+                <br>
+                Straße: {{todo.strasse}}, {{todo.hausnummer}}
+                <br>
+                Postleitzahl: {{todo.plz}}
+                <br>
+                Preis: {{todo.preis}} €
+              </mat-panel-title>
+              <mat-panel-description>
+                {{thisPanel.expanded ? 'In Bearbeitung' : 'Noch zu verarbeiten'}}
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+
+            <!-- Zutaten/ Pizzen -->
+            <div *ngFor="let pizBestellt of pizzenBestellt">
+              <div *ngIf="todo.id == pizBestellt.orderID">
+
+                <!--alle Pizzen durchgehen um Namen für pizzaID zu kriegen-->
+                <div *ngFor="let piz of pizzen">
+                  <div *ngIf="pizBestellt.pizzaID == piz.id">
+                    <mat-checkbox>{{pizBestellt.anzahl}}x {{piz.pizzaName}}</mat-checkbox>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <button mat-raised-button color="warn" (click)="setOrderDone(todo)" mat-button>Fertig</button>
+
+          </mat-expansion-panel>
+        </mat-accordion>
+      </div>
+    </cdk-virtual-scroll-viewport>
+  </mat-grid-tile>
+
+
+
+  <br />
+
+  <mat-grid-tile>
+    <!-- Abgehakte Rechnungen-->
+    <cdk-virtual-scroll-viewport appendOnly itemSize="50" class="example-viewport overflow">
+      <p class="überschrift">DONE:</p>
+      <div class="example-card" *ngFor="let done of ordersDONE">
+        <mat-accordion class=accord>
+
+          <mat-expansion-panel hideToggle (opened)="panelOpenState = true"
+                               (closed)="panelOpenState = false"
+                               #thisPanel>
+
+            <!-- Bestelldaten auf einem Blick-->
+            <mat-expansion-panel-header class=panel-size>
+              <mat-panel-title>
+                ID: {{done.id}}
+                <br>
+                Adresse:{{done.strasse}}, {{done.hausnummer}}
+                <br>
+                Preis: {{done.preis}} €
+              </mat-panel-title>
+              <mat-panel-description>
+                {{thisPanel.expanded ? 'Einsicht des Abgeschlossenen' : 'Abgeschlossen'}}
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+
+            <!-- Zutaten/ Pizzen -->
+            <div *ngFor="let pizBestellt of pizzenBestellt">
+              <div *ngIf="done.id == pizBestellt.orderID">
+
+                <!--alle Pizzen durchgehen um Namen für pizzaID zu kriegen-->
+                <div *ngFor="let piz of pizzen">
+                  <div *ngIf="pizBestellt.pizzaID == piz.id">
+                    <mat-checkbox [checked]="true">{{pizBestellt.anzahl}}x {{piz.pizzaName}}</mat-checkbox>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </div>
+      <br />
+    </cdk-virtual-scroll-viewport>
+  </mat-grid-tile>
+</mat-grid-list>

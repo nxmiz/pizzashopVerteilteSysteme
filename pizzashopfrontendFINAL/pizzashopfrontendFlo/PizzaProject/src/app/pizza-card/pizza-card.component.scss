@@ -1,0 +1,22 @@
+.content {
+  padding: 16px;
+}
+
+.content > mat-card {
+  width: 200px;
+}
+
+.mat-card-content{
+    height: 50px;
+}
+
+.mat-card-actions {
+  height: 50px;
+  font-size: 20px;
+  text-align: end;
+  flex: 1 1 auto;
+}
+
+.button {
+  font-size: 15px;
+}

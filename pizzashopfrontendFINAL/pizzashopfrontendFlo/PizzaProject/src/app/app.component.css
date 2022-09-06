@@ -1,0 +1,24 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.FullWebsite {
+  overflow: hidden;
+  height: 100%;
+}
+
+.mat-toolbar {
+  height: 150px;
+  max-height: 150px;
+  padding: 20px;
+}
+
+.text {
+  font-size: 60px;
+  margin: 30px;
+}
+
+.mat-icon {
+  transform: scale(2);
+}
+

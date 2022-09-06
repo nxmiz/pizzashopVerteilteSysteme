@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\app",
+    "\\app\\bestelluebersicht",
+    "\\app\\expansion-panel",
+    "\\app\\order-main",
+    "\\app\\pizza-card",
+    "\\app\\pizza-overview",
+    "\\app\\selected-pizza-overview",
+    "\\assets",
+    "\\assets\\PizzenBilder"
+  ],
+  "SelectedNode": "\\app\\expansion-panel\\expansion-panel.component.ts",
+  "PreviewInSolutionExplorer": false
+}

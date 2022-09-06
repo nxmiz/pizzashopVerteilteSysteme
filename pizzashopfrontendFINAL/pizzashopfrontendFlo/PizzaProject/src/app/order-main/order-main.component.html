@@ -1,0 +1,31 @@
+<!--
+  <mat-sidenav-container class="MainContainer">
+    <mat-sidenav opened mode="side" position="end"><app-selected-pizza-overview></app-selected-pizza-overview></mat-sidenav>
+    <mat-grid-list cols="3">
+
+
+      <div *ngFor="let pizza of PizzaList">
+        <mat-grid-tile><app-pizza-card [Id]="pizza.id" [PizzaName]="pizza.pizzaName" [PizzaPreis]="pizza.pizzaPreis" [PizzaBeschreibung]="pizza.pizzaBeschreibung"></app-pizza-card></mat-grid-tile>
+      </div>
+    </mat-grid-list>
+
+  </mat-sidenav-container>
+
+-->
+<mat-sidenav-container>
+  <mat-sidenav opened mode="side" position="end"><app-selected-pizza-overview></app-selected-pizza-overview></mat-sidenav>
+
+  <div class="content">
+    <div fxLayout="row wrap" fxLayoutGap="16px grid">
+
+      <div fxFlex="25%" fxFlex.gt-xs="100%" fxFlex.gt-sm="50%" fxFlex.gt-md="33%" fxFlex.gt-lg="25%" *ngFor="let pizza of PizzaList">
+
+        <app-pizza-card [Id]="pizza.id" [PizzaName]="pizza.pizzaName" [PizzaPreis]="pizza.pizzaPreis" [PizzaBeschreibung]="pizza.pizzaBeschreibung"></app-pizza-card>
+
+      </div>
+
+
+    </div>
+  </div>
+</mat-sidenav-container>
+

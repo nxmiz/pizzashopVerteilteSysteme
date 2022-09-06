@@ -1,0 +1,17 @@
+<div class="FullWebsite">
+  <mat-toolbar color="primary">
+    <button routerLink="/order-main" mat-icon-button class="HomeIcon" aria-label="Button with Home">
+      <mat-icon class="icon">home</mat-icon>
+    </button>
+    <span class="text">BA - Pizza</span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button (click)="routeToOrderOverview()" class="LockIcon" aria-label="Button with Lock">
+      <mat-icon class="iconright">lock</mat-icon>
+    </button>
+  </mat-toolbar>
+
+  <router-outlet></router-outlet>
+
+  </div>
+
+

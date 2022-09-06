@@ -1,0 +1,33 @@
+<div class="sidenav">
+
+  <p class="Warenkorb">Warenkorb</p>
+  <br />
+
+  <p class="ausgew">ausgewählte Pizzen:</p>
+  <br />
+
+  <!--alle bestellbaren Pizzen anzeigen lassen-->
+  <mat-list>
+    <div *ngFor="let pizza of ausgewaehltePizzen; let i = index">
+
+      <mat-list-item>
+        <div mat-line>{{pizza.pizzaName}}</div>
+        <div mat-line> {{pizza.pizzaPreis}} € </div>
+        <button mat-icon-button (click)="removePizzaFromCart(i)"><mat-icon>delete</mat-icon></button>
+
+      </mat-list-item>
+    </div>
+  </mat-list>
+
+
+  <div class="bottom">
+
+    <mat-divider></mat-divider>
+
+    <div>
+      <h2>Summe: {{Summe}} €</h2>
+    </div>
+
+    <button mat-flat-button color="warn" (click)="bestellen()" [disabled]="ausgewaehltePizzen.length == 0">Bestellen</button>
+  </div>
+</div>

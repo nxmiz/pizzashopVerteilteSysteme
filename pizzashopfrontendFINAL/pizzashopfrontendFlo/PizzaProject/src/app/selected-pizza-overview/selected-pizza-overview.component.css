@@ -1,0 +1,26 @@
+.sidenav {
+  width: 350px;
+  margin: 30px;
+}
+
+.Warenkorb {
+  text-align: center;
+  padding-top: 20px;
+  font-size: 30px;
+}
+
+.ausgew {
+  font-size: 22px;
+}
+
+.mat-list{
+    overflow-y: auto;
+    height: 800px;
+}
+
+.bottom {
+  position: fixed;
+  bottom: 20px;
+  margin: 0 auto;
+  width:100%;
+}

@@ -1,0 +1,73 @@
+<div *ngIf="orderDone == true">
+
+  <mat-card>
+    <mat-card-title>Deine Bestellung ist bei uns eingegangen!</mat-card-title>
+
+    <br />
+
+    <mat-card-subtitle>Bitte komme in ~45 Minuten vorbei und bezahle in Bar!</mat-card-subtitle>
+    <mat-dialog-actions>
+      <button mat-raised-button color="primary" mat-dialog-close type="submit" (click)="refresh()">Ok</button>
+    </mat-dialog-actions>
+  </mat-card>
+
+</div>
+
+
+<div *ngIf="orderDone == false">
+  <form [formGroup]="kundeForm" (submit)="submit" class="form">
+
+    <h1 class="header" mat-dialog-title>Bitte gib deine Daten ein!</h1>
+
+    <br />
+
+    <mat-card>
+
+      <mat-form-field class="titel medium" appearance="fill">
+        <mat-label class="text">Vorname</mat-label>
+        <input matInput formControlName="vorname">
+      </mat-form-field>
+
+      <mat-form-field class="titel medium" appearance="fill">
+        <mat-label class="text">Nachname</mat-label>
+        <input matInput formControlName="nachname">
+      </mat-form-field>
+
+      <mat-form-field class="titel long" appearance="fill">
+        <mat-label class="text">Strasse</mat-label>
+        <input matInput formControlName="strasse">
+      </mat-form-field>
+
+      <mat-form-field class="titel short" appearance="fill">
+        <mat-label class="text">Hausnummer</mat-label>
+        <input matInput formControlName="hausnummer">
+      </mat-form-field>
+
+      <mat-form-field class="titel mediumshort" appearance="fill">
+        <mat-label class="text">Postleitzahl</mat-label>
+        <input matInput formControlName="plz">
+      </mat-form-field>
+
+      <mat-form-field class="titel mediumlong" appearance="fill">
+        <mat-label class="text">Stadt</mat-label>
+        <input matInput formControlName="stadt">
+      </mat-form-field>
+
+      <br />
+      <br />
+      <br />
+
+      <p class="bigText">zu zahlender Betrag: {{tempPreis}} €</p>
+
+    </mat-card>
+
+
+
+    <mat-dialog-actions>
+      <button mat-raised-button color="warn" mat-dialog-close>Abbrechen</button>
+      <button mat-raised-button color="primary" [disabled]="!kundeForm.valid" (click)="submit()">Kostenpflichtig bestellen!</button>
+    </mat-dialog-actions>
+
+
+  </form>
+</div>

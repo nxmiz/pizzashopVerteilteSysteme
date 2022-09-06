@@ -1,0 +1,38 @@
+.box {
+  margin: 0;
+  padding: 10px;
+  border: none;
+  font-size: large;
+  color: black;
+}
+
+.titel {
+  font-size: 20px;
+}
+
+.long {
+  width: 70%;
+  margin-right: 10px;
+}
+
+.medium {
+  width: 45%;
+  margin-right: 10px;
+}
+
+.short {
+  width: 20%;
+}
+
+.mediumshort {
+  width: 30%;
+  margin-right: 10px;
+}
+
+.mediumlong{
+  width: 60%;
+}
+
+.bigText {
+  font-size: 20px;
+}

@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\expansion-panel",
+    "\\src\\app\\ground",
+    "\\src\\app\\material",
+    "\\src\\app\\order-main",
+    "\\src\\app\\pizza-card",
+    "\\src\\app\\pizza-overview",
+    "\\src\\app\\selected-pizza-overview"
+  ],
+  "SelectedNode": "\\src\\app\\ground\\ground.component.html",
+  "PreviewInSolutionExplorer": false
+}
