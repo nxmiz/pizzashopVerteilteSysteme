@@ -1,0 +1,36 @@
+﻿@model PizzaLieferant.Pizza
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Pizza</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PizzaName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PizzaName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PizzaPreis)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PizzaPreis)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PizzaBeschreibung)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PizzaBeschreibung)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
